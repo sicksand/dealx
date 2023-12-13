@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Investment Calculator</title>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <center><img class="rounded mx-auto d-block" src="https://my.litefinance.org/uploads/avatars/108/020/4ef5df57813e9480894f48d2b348687f_big.jpg" alt="LiteFinance Global LLC"/>
+        <h2 class="text-success">127.91 %</h2>
+        <small>PROFITABILITY</small></center>
+      <h1 class="text-center">Investment Calculator</h1>
+      <div class="card my-5 p-4 mx-auto">
+        <form>
+          <div class="form-group mb-3 row">
+            <label for="startingCapital" class="col-sm-2 col-form-label">Starting Capital:</label>
+            <div class="col-sm-10">
+              <input type="number" class="form-control" id="startingCapital" placeholder="Enter starting capital" required>
+            </div>
+          </div>
+          <div class="form-group mb-3 row">
+            <label for="monthlyTopup" class="col-sm-2 col-form-label">Monthly Top-up:</label>
+            <div class="col-sm-10">
+              <input type="number" class="form-control" id="monthlyTopup" placeholder="Enter monthly top-up" required>
+            </div>
+          </div>
+          <div class="form-group mb-3 row">
+            <label for="targetMonthlyPercent" class="col-sm-2 col-form-label">Target Monthly %:</label>
+            <div class="col-sm-10">
+              <input type="number" class="form-control" id="targetMonthlyPercent" placeholder="Enter target monthly percentage" required>
+            </div>
+          </div>
+          <div class="form-group mb-3 row">
+            <label for="totalMonthsVariation" class="col-sm-2 col-form-label">Total Month Variation:</label>
+            <div class="col-sm-10">
+              <input type="number" class="form-control" id="totalMonthsVariation" placeholder="Enter total month variation" required>
+            </div>
+          </div>
+          <div class="form-group mb-3 row justify-content-center">
+            <button type="button" class="btn btn-primary col-sm-4" onclick="calculate()">Calculate</button>
+          </div>
+        </form>
+        <div id="results" class="mt-4"></div>
+      </div>
+      <div class="card my-5 p-4 mx-auto">
+        <span class="badge bg-secondary">COMMISSION FEES 20%</span>
+            <p><small>Target Profit:30%-60%/pa<br>
+            Max Drawdown Recorded:30%</small></p>
+
+            <p><small>Minimum to Copy : USD20<br>
+            Best For Compounding : USD500~USD2,000<br>
+            Maximum to Copy : USD10,000</small></p>
+
+            <p><small>Setting : in proportion to my fund</small></p>
+
+            <p><small>Bring your networks to copy us and earn extra 20% Profit<br>
+            Sharing from DealX_Int</small></p>
+
+            <p><small>To copy more than USD2,000.00, please DM us..</small></p>
+            <p><small>Forex is high risk investment.<br>
+            We'll do our best to minimise the risk.<br>
+            Please copy at your own risk.</small></p>
+            <br><br>
+            <a href="https://my.litefinance.org/traders/info?id=1080203" type="button" class="btn btn-primary">Register with us</a>
+         
+      </div>
+      <div class="card my-5 p-4 mx-auto">
+        <h5 class="card-title">Profitability</h5>
+        <div class="form-group mb-3 row">
+          <div class="col-sm-2">
+            Jan 2023
+            <span class="badge rounded-pill bg-light text-dark float-end">17.3%</span>
+          </div>
+          <div class="col-sm-10">
+            <div class="progress" style="height: 10px;">
+              <div class="progress-bar progress-bar bg-success" role="progressbar" style="width: 95%;height: 8px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group mb-3 row">
+          <div class="col-sm-2">
+            Feb 2023
+            <span class="badge rounded-pill bg-light text-dark float-end">5.28%</span>
+          </div>
+          <div class="col-sm-10">
+            <div class="progress" style="height: 10px;">
+              <div class="progress-bar progress-bar bg-success" role="progressbar" style="width: 20%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+        </div>  
+        <div class="form-group mb-3 row">
+          <div class="col-sm-2">
+            Mac 2023
+            <span class="badge rounded-pill bg-light text-dark float-end">5.74%</span>
+          </div>
+          <div class="col-sm-10">
+            <div class="progress" style="height: 10px;">
+              <div class="progress-bar progress-bar bg-success" role="progressbar" style="width: 21%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group mb-3 row">
+          <div class="col-sm-2">
+            Apr 2023
+            <span class="badge rounded-pill bg-light text-dark float-end">2.75%</span>
+          </div>
+          <div class="col-sm-10">
+            <div class="progress" style="height: 10px;">
+              <div class="progress-bar progress-bar bg-success" role="progressbar" style="width: 13%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group mb-3 row">
+          <div class="col-sm-2">
+            May 2023
+            <span class="badge rounded-pill bg-light text-dark float-end">4.95%</span>
+          </div>
+          <div class="col-sm-10">
+            <div class="progress" style="height: 10px;">
+              <div class="progress-bar progress-bar bg-success" role="progressbar" style="width: 19%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group mb-3 row">
+          <div class="col-sm-2">
+            Jun 2023
+            <span class="badge rounded-pill bg-light text-dark float-end">5.88%</span>
+          </div>
+          <div class="col-sm-10">
+            <div class="progress" style="height: 10px;">
+              <div class="progress-bar progress-bar bg-success" role="progressbar" style="width: 22%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group mb-3 row">
+          <div class="col-sm-2">
+            Jul 2023
+            <span class="badge rounded-pill bg-light text-dark float-end">6.54%</span>
+          </div>
+          <div class="col-sm-10">
+            <div class="progress" style="height: 10px;">
+              <div class="progress-bar progress-bar bg-success" role="progressbar" style="width: 24%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group mb-3 row">
+          <div class="col-sm-2">
+            Aug 2023
+            <span class="badge rounded-pill bg-light text-dark float-end">4.81%</span>
+          </div>
+          <div class="col-sm-10">
+            <div class="progress" style="height: 10px;">
+              <div class="progress-bar progress-bar bg-success" role="progressbar" style="width: 18.5%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group mb-3 row">
+          <div class="col-sm-2">
+            Sep 2023
+            <span class="badge rounded-pill bg-light text-dark float-end">5.03%</span>
+          </div>
+          <div class="col-sm-10">
+            <div class="progress" style="height: 10px;">
+              <div class="progress-bar progress-bar bg-success" role="progressbar" style="width: 20.1%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group mb-3 row">
+          <div class="col-sm-2">
+            Oct 2023
+            <span class="badge rounded-pill bg-light text-dark float-end">6.45%</span>
+          </div>
+          <div class="col-sm-10">
+            <div class="progress" style="height: 10px;">
+              <div class="progress-bar progress-bar bg-success" role="progressbar" style="width: 23.5%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group mb-3 row">
+          <div class="col-sm-2">
+            Nov 2023
+            <span class="badge rounded-pill bg-light text-dark float-end">8.13%</span>
+          </div>
+          <div class="col-sm-10">
+            <div class="progress" style="height: 10px;">
+              <div class="progress-bar progress-bar bg-success" role="progressbar" style="width: 28%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group mb-3 row">
+          <div class="col-sm-2">
+            Dis 2023
+            <span class="badge rounded-pill bg-light text-dark float-end">13.43%</span>
+          </div>
+          <div class="col-sm-10">
+            <div class="progress" style="height: 10px;">
+              <div class="progress-bar progress-bar bg-success" role="progressbar" style="width: 80%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+    <script>
+      function calculate() {
+  // Get the input values
+  var startingCapital = parseFloat(document.getElementById("startingCapital").value);
+  var monthlyTopup = parseFloat(document.getElementById("monthlyTopup").value);
+  var targetMonthlyPercent = parseFloat(document.getElementById("targetMonthlyPercent").value) / 100; // Convert percentage to decimal
+  var realPercent = document.getElementById("targetMonthlyPercent").value;
+  var totalMonthsVariation = parseInt(document.getElementById("totalMonthsVariation").value);
+
+  // Initialize variables
+  var capital = startingCapital;
+  var total = startingCapital + (capital * targetMonthlyPercent); // Include initial topup in total
+  
+  console.log("capital "+ capital);
+  console.log("total "+ total);
+  
+  // Create a table to display the results
+  var resultsTable = document.createElement("table");
+  resultsTable.classList.add("table", "table-striped");
+
+  // Create the table header
+  const thead = document.createElement('thead');
+  var headerRow = document.createElement("tr");
+  var headerData1 = document.createElement("th");
+  headerData1.classList.add("scope");
+  headerData1.textContent = "Month";
+  headerRow.appendChild(headerData1);
+  var headerData2 = document.createElement("th");
+  headerData2.textContent = "Capital";
+  headerRow.appendChild(headerData2);
+  var headerData3 = document.createElement("th");
+  headerData3.textContent = "Monthly Top-up";
+  headerRow.appendChild(headerData3);
+  var headerData4 = document.createElement("th");
+  headerData4.textContent = "Interest";
+  headerRow.appendChild(headerData4);
+  var headerData5 = document.createElement("th");
+  headerData5.textContent = "Total";
+  headerRow.appendChild(headerData5);
+  thead.appendChild(headerRow);
+  resultsTable.appendChild(thead);
+
+  // Loop through each month
+  for (var month = 1; month <= totalMonthsVariation; month++) {
+    // Add the monthly interest to the total
+    if (month == 1) {
+      total = total;
+    } else {
+      capital = total;
+      //console.log("capital "+ capital);
+      
+      total = capital + monthlyTopup + (capital + monthlyTopup) * (realPercent / 100) ;
+      //console.log("total "+ total);
+    }
+      
+    // Create a new table row for each month
+    const tbody = document.createElement('tbody');
+    var dataRow = document.createElement("tr");
+    //dataRow.classList.add("table-bordered");
+    // Create data cells for month, capital, monthly top-up, interest, and total
+    var monthCell = document.createElement("td");
+    monthCell.textContent = month;
+    dataRow.appendChild(monthCell);
+    var capitalCell = document.createElement("td");
+    capitalCell.textContent = "USD " + capital.toFixed(2);
+    dataRow.appendChild(capitalCell);
+    var monthlyTopupCell = document.createElement("td");
+    monthlyTopupCell.textContent = "USD " + (month > 1 ? monthlyTopup.toFixed(2) : 0); // Add topup from second month
+    dataRow.appendChild(monthlyTopupCell);
+    var interestCell = document.createElement("td");
+    interestCell.classList.add('text-center');
+    interestCell.textContent = realPercent + "%";
+    dataRow.appendChild(interestCell);
+    var totalCell = document.createElement("td");
+    totalCell.textContent = "USD " + total.toFixed(2);
+    dataRow.appendChild(totalCell);
+    tbody.appendChild(dataRow);
+    // Add the data row to the results table
+    resultsTable.appendChild(tbody);
+  }
+
+  // Clear the existing results area
+  document.getElementById("results").innerHTML = "";
+
+  // Append the completed table to the results area
+  document.getElementById("results").appendChild(resultsTable);
+}
+
+
+  </script>
+  <footer class="bg-body-tertiary text-center text-lg-start">
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+      © 2023
+            <span class="badge rounded-pill bg-light text-dark float-end">17.3%</span> Copyright:
+      <a class="text-body" href="https://linktr.ee/dapomokcikkopipokcik/">Shafiq Mustapa</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  </body>
+</html>
